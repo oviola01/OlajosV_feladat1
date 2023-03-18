@@ -32,10 +32,16 @@ function init() {
         DIVEK[index].innerHTML += "<button>Törlés</button>";
     } */
 
-    //ez még nem jó!
+    /*ez még nem jó!
     const GOMBOK = document.querySelectorAll("button");
     GOMBOK.addEventListener("click", function() {delete DIVEK[gombindexe]});
-    
+    másik ötlet: a lista indexedik elemét törlöm, így nem kell megfogni a diveket
+    */
+
+    //táblázatba kutyaírás - HF!!!!!!!!!!!!!!!!!!!!!!!!
+    ARTIC.innerHTML += tablazatbaIR();
+
+    //szorgalmi: új kutya hozzáadásához egy űrlap
 }
 
 function osszeallit() {
@@ -60,6 +66,18 @@ function osszeallit() {
     
 }
 
+function tablazatbaIR() {
+    let txt = ""
+    txt += `<table>`
+    for (let index = 0; index < kutyaLista.length; index++) {
+        txt += `<tr>`
+        for (const key in kutyaLista[index]) {
+             txt += `<td>${kutyaLista[index][key]}</td>`
+        }
+        txt += `</tr>`
+    }
+    txt += `/<table>`
+}
 
 function kattintas(hova) {
     hova.innerHTML += `<p>${kutyaLista[2]}</p>`;
