@@ -4,3 +4,28 @@
     box-sizing: border-box;
 }
 
+
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+article div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin: 20px;
+    padding: 20px;
+    border-color: black;
+    border-style: solid;
+}
+
+article div p {
+    margin: auto;
+    padding: auto;
+}
