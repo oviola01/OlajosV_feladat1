@@ -26,11 +26,13 @@ function init() {
     */
     //itt helyezzük bele az article elembe
 
+    /* így is hozzáadhatok gombokat
     const DIVEK = document.querySelectorALL("div");
     for (let index = 0; index < kutyaLista.length; index++) {
         DIVEK[index].innerHTML += "<button>Törlés</button>";
-    }
+    } */
 
+    //ez még nem jó!
     const GOMBOK = document.querySelectorAll("button");
     GOMBOK.addEventListener("click", function() {delete DIVEK[gombindexe]});
     
@@ -39,13 +41,14 @@ function init() {
 function osszeallit() {
     //összeállítjuk a szöveges tartalmat
     let txt = "";
-    /*kiírjuk a kutyák adatait divekbe, azon belül p tagekbe*/
+    //kiírjuk a kutyák adatait divekbe, azon belül p tagekbe    
     for (let index = 0; index < kutyaLista.length; index++) {
-        txt += `<div>
-            <p>${kutyaLista[index].nev}</p>
-            <p>${kutyaLista[index].kor}</p>
-            <p>${kutyaLista[index].fajta}</p>
-            </div>`;
+        txt += `<div>` /*nyitás*/
+        //for in ciklussal megyek végig
+        for (const key in kutyaLista[index]) {
+             txt += `<p>${kutyaLista[index][key]}</p>`
+        }
+        txt += `<button>Törlés</button></div>`; /*gombot itt adom hozzá, majd zárás*/
     }
 
     /*kiírjuk a kutyákat divekbe, azon belül p tagekbe
