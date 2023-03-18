@@ -32,7 +32,7 @@ function init() {
     }
 
     const GOMBOK = document.querySelectorAll("button");
-    GOMBOK.addEventListener("click", function() {kattintas(gombindexe)});
+    GOMBOK.addEventListener("click", function() {delete DIVEK[gombindexe]});
     
 }
 
@@ -57,12 +57,7 @@ function osszeallit() {
     
 }
 
-function kattintas(hanyadik) {
-    delete DIVEK[hanyadik]
-}
 
-/*
 function kattintas(hova) {
     hova.innerHTML += `<p>${kutyaLista[2]}</p>`;
 } 
-*/
