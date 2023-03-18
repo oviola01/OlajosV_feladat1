@@ -21,6 +21,12 @@ function init() {
         console.log(kulcs,KUTYAK[1][kulcs]);
     }
     
+    for (let i=0; i<KUTYAK.length; i++) {
+        for (const kulcs in KUTYAK[i]) {
+        console.log(kulcs,KUTYAK[i][kulcs]);
+        }
+    }
+
     /*
     const DEZI = {
         nev: "Dézi",
