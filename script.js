@@ -26,6 +26,13 @@ function init() {
     */
     //itt helyezzük bele az article elembe
 
+    const DIVEK = document.querySelectorALL("div");
+    for (let index = 0; index < kutyaLista.length; index++) {
+        DIVEK[index].innerHTML += "<button>Törlés</button>";
+    }
+
+    const GOMBOK = document.querySelectorAll("button");
+    GOMBOK.addEventListener("click", function() {kattintas(gombindexe)});
     
 }
 
@@ -50,6 +57,9 @@ function osszeallit() {
     
 }
 
+function kattintas(hanyadik) {
+    delete DIVEK[hanyadik]
+}
 
 /*
 function kattintas(hova) {
